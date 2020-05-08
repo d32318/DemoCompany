@@ -18,7 +18,6 @@ public class EmployeeController {
 	@PostMapping(value = "/AddEmployee/v1") 
 	@ResponseStatus(HttpStatus.CREATED)
 	public Object AddEmployee(@RequestBody EmployeeDomain request){
-		//return addEmployee;
 		return employeeService.AddEmployee(request);
 	}
 	
@@ -26,7 +25,6 @@ public class EmployeeController {
 	@PatchMapping(value = "/ModEmployee/v1") 
 	@ResponseStatus(HttpStatus.CREATED)
 	public Object ModEmployee(@RequestBody EmployeeDomain request){
-		//return addEmployee;
 		return employeeService.ModEmployee(request);
 	}
 	
@@ -34,7 +32,6 @@ public class EmployeeController {
 	@DeleteMapping(value = "/DelEmployee/v1/{number}") 
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void DelEmployee(@PathVariable("number") int number){
-		//return DelEmployee;
 		employeeService.DelEmployee(number);
 	}
 	
@@ -42,7 +39,6 @@ public class EmployeeController {
 	@PostMapping(value = "/SearchEmployee/v1") 
 	@ResponseStatus(HttpStatus.CREATED)
 	public Object SearchEmployee(@RequestBody EmployeeDomain request){
-		//return addEmployee;
 		return employeeService.SearchEmployee(request);
 	}
 }

@@ -29,7 +29,6 @@ public class DepartmentController {
 	@PostMapping(value = "/AddDepartment/v1") 
 	@ResponseStatus(HttpStatus.CREATED)
 	public Object AddDepartment(@RequestBody DepartmentDomain request){
-		//return addEmployee;
 		return departmentService.AddDepartment(request);
 	}
 	
@@ -37,7 +36,6 @@ public class DepartmentController {
 	@PatchMapping(value = "/ModDepartment/v1") 
 	@ResponseStatus(HttpStatus.CREATED)
 	public Object ModDepartment(@RequestBody DepartmentDomain request){
-		//return addEmployee;
 		return departmentService.ModDepartment(request);
 	}
 	
@@ -45,7 +43,6 @@ public class DepartmentController {
 	@DeleteMapping(value = "/DelDepartment/v1/{departmentID}") 
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void DelDepartment(@PathVariable("departmentID") int departmentID){
-		//return DelEmployee;
 		departmentService.DelDepartment(departmentID);
 	}
 }
