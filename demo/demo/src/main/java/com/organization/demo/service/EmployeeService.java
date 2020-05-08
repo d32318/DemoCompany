@@ -21,4 +21,16 @@ public class EmployeeService {
 		return employeeDao.addEmployee(request);
 	}
 
+	public void DelEmployee(int number) {
+		// TODO Auto-generated method stub
+		
+		employeeDao.delEmployee(number);
+	}
+
+	public String ModEmployee(EmployeeDomain request) {
+		// TODO Auto-generated method stub
+		
+		return employeeDao.modEmployee(request);
+	}
+
 }

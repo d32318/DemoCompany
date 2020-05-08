@@ -17,12 +17,28 @@ public class EmployeeController {
 	@Autowired
 	private EmployeeService employeeService;
 	
-	@ApiOperation(value="添加員工", notes="添加員工") 
+	@ApiOperation(value="新增員工資料", notes="新增員工資料") 
 	@PostMapping(value = "/AddEmployee/v1") 
 	@ResponseStatus(HttpStatus.CREATED)
 	public Object AddEmployee(@RequestBody EmployeeDomain request){
 		//return addEmployee;
 		return employeeService.AddEmployee(request);
+	}
+	
+	@ApiOperation(value="修改員工資料", notes="修改員工資料") 
+	@PatchMapping(value = "/ModEmployee/v1") 
+	@ResponseStatus(HttpStatus.CREATED)
+	public Object ModEmployee(@RequestBody EmployeeDomain request){
+		//return addEmployee;
+		return employeeService.ModEmployee(request);
+	}
+	
+	@ApiOperation(value="刪除員工資料", notes="刪除員工資料") 
+	@DeleteMapping(value = "/DelEmployee/v1/{number}") 
+	@ResponseStatus(HttpStatus.NO_CONTENT)
+	public void DelEmployee(@PathVariable("number") int number){
+		//return DelEmployee;
+		employeeService.DelEmployee(number);
 	}
 	
 }

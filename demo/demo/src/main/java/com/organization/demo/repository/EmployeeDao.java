@@ -39,4 +39,29 @@ public class EmployeeDao {
 		return "{\"Result\":\"Success\"}";
 	}
 
+	public void delEmployee(int number) {
+		// TODO Auto-generated method stub
+		jdbcTemplate.execute("delete from COMPANY_EMPLOYEE where number=" + number);
+		System.out.println("Delete");
+	}
+
+	public String modEmployee(EmployeeDomain request) {
+		// TODO Auto-generated method stub
+		Date currentDateTime = new Date();
+		SimpleDateFormat dateTimeft = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss");
+		
+		jdbcTemplate.execute("update COMPANY_EMPLOYEE set "
+				+ "name = '" + request.getName() +"',"
+				+ "number = '" + request.getNumber() +"',"
+				+ "department_id = '" + request.getDepartmentID() +"',"
+				+ "gender = '" + request.getGender() +"',"
+				+ "phone = '" + request.getPhone() +"',"
+				+ "address = '" + request.getAddress() + "',"
+				+ "age = '" + request.getAge() +"',"
+				+ "time_last_modified = '" + dateTimeft.format(currentDateTime).toString() +"' "
+				+ "where number = '" + request.getNumber() +"'");
+		
+		return "{\"Result\":\"Success\"}";
+	}
+
 }
