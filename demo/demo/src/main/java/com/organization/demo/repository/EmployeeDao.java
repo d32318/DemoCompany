@@ -20,19 +20,9 @@ public class EmployeeDao {
 	}
 	
 	public String addEmployee(EmployeeDomain request) {
+		
 		Date currentDateTime = new Date();
 		SimpleDateFormat dateTimeft = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss");
-		
-		EmployeeDomain addEmployee = new EmployeeDomain();
-		addEmployee.setAddress(request.getAddress());
-		addEmployee.setNumber(request.getNumber());
-		addEmployee.setAge(request.getAge());
-		addEmployee.setDepartmentID(request.getDepartmentID());
-		addEmployee.setGender(request.getGender());
-		addEmployee.setName(request.getName());
-		addEmployee.setPhone(request.getPhone());
-		addEmployee.setTimeCreate(dateTimeft.format(currentDateTime).toString());
-		addEmployee.setTimeLastModified(dateTimeft.format(currentDateTime).toString());
 		
 		jdbcTemplate.execute("insert into COMPANY_EMPLOYEE (name, number, department_id, gender, phone, "
 				+ "address,age, time_create,time_last_modified) values ('" 
