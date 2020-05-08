@@ -64,4 +64,10 @@ public class EmployeeDao {
 		return "{\"Result\":\"Success\"}";
 	}
 
+	public String searchEmployee(EmployeeDomain request) {
+		// TODO Auto-generated method stub
+		
+		return null;
+	}
+
 }

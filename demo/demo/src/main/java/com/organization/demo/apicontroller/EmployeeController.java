@@ -1,7 +1,5 @@
 package com.organization.demo.apicontroller;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import org.springframework.http.HttpStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*; 
@@ -10,7 +8,6 @@ import com.organization.demo.domain.EmployeeDomain;
 import com.organization.demo.service.EmployeeService;
 
 @RestController
-//@RequestMapping(produces = MediaType.APPLICATION_JSON_VALUE)
 @RequestMapping("/demo/Employee")
 public class EmployeeController {
 	
@@ -41,4 +38,11 @@ public class EmployeeController {
 		employeeService.DelEmployee(number);
 	}
 	
+	@ApiOperation(value="查詢員工資料", notes="查詢員工資料") 
+	@PostMapping(value = "/SearchEmployee/v1") 
+	@ResponseStatus(HttpStatus.CREATED)
+	public Object SearchEmployee(@RequestBody EmployeeDomain request){
+		//return addEmployee;
+		return employeeService.SearchEmployee(request);
+	}
 }

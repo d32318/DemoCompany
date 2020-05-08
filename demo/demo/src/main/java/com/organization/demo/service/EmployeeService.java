@@ -1,11 +1,7 @@
 package com.organization.demo.service;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.organization.demo.domain.EmployeeDomain;
 import com.organization.demo.repository.EmployeeDao;
 
@@ -31,6 +27,12 @@ public class EmployeeService {
 		// TODO Auto-generated method stub
 		
 		return employeeDao.modEmployee(request);
+	}
+
+	public String SearchEmployee(EmployeeDomain request) {
+		// TODO Auto-generated method stub
+		
+		return employeeDao.searchEmployee(request);
 	}
 
 }
