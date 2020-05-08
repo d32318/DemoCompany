@@ -1,0 +1,86 @@
+package com.organization.demo.domain;
+
+import javax.persistence.Entity;
+
+
+@Entity
+public class Employee {
+
+	private String name;
+	private String departmentID;
+	private String gender;
+	private String phone;
+	private String address;
+	private String age;
+	private String timeCreate;
+	private String timeLastModified;
+	
+	public Employee() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getDepartmentID() {
+		return departmentID;
+	}
+
+	public void setDepartmentID(String departmentID) {
+		this.departmentID = departmentID;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getAge() {
+		return age;
+	}
+
+	public void setAge(String age) {
+		this.age = age;
+	}
+
+	public String getTimeCreate() {
+		return timeCreate;
+	}
+
+	public void setTimeCreate(String timeCreate) {
+		this.timeCreate = timeCreate;
+	}
+
+	public String getTimeLastModified() {
+		return timeLastModified;
+	}
+
+	public void setTimeLastModified(String timeLastModified) {
+		this.timeLastModified = timeLastModified;
+	}
+
+}

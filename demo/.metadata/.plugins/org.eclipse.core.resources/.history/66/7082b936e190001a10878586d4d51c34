@@ -1,0 +1,12 @@
+package com.organization.demo.service;
+
+import com.organization.demo.repository.EmployeeRepository;
+
+public class EmployeeService {
+
+	private EmployeeRepository employeeRepository;
+	public EmployeeService() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

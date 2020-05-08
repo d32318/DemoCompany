@@ -1,0 +1,15 @@
+package com.organization.demo.service;
+
+import com.organization.demo.domain.EmployeeDomain;
+import com.organization.demo.repository.EmployeeRepository;
+
+public class EmployeeService {
+
+	private EmployeeRepository employeeRepository;
+	
+	public Object AddEmployee(EmployeeDomain request) {
+		// TODO Auto-generated constructor stub
+		return addEmployee;
+	}
+
+}

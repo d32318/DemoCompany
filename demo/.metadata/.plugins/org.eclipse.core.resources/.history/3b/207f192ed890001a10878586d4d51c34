@@ -1,0 +1,5 @@
+package com.organization.demo.repository;
+
+public interface EmployeeRepository {
+
+}

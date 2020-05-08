@@ -1,0 +1,9 @@
+package com.organization.demo.repositories;
+
+public class EmployeeRepo {
+
+	public EmployeeRepo() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

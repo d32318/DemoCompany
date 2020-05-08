@@ -1,0 +1,9 @@
+package com.organization.demo.utils;
+
+public class Swagger {
+
+	public Swagger() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

@@ -1,0 +1,9 @@
+package com.organization.demo.bean;
+
+public class EmployeeView {
+
+	public EmployeeView() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

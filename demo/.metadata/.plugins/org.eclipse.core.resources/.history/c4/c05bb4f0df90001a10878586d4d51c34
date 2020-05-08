@@ -1,0 +1,42 @@
+package com.organization.demo.apicontroller;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*; 
+import io.swagger.annotations.ApiOperation; 
+import java.util.List; 
+import com.organization.demo.domain.EmployeeDomain;
+import com.organization.demo.service.EmployeeService;
+
+@RestController
+//@RequestMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping("/demo/Employee")
+public class EmployeeController {
+	
+	@Autowired
+	private EmployeeService employeeService;
+	
+	@ApiOperation(value="添加用戶", notes="添加用戶") 
+	@PostMapping(value = "/AddEmployee/v1") 
+	@ResponseStatus(HttpStatus.CREATED)
+	public Object AddEmployee(@RequestBody EmployeeDomain request){
+		
+		Date currentDateTime = new Date();
+		SimpleDateFormat dateTimeft = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss");
+		
+		EmployeeDomain addEmployee = new EmployeeDomain();
+		addEmployee.setAddress(request.getAddress());
+		addEmployee.setNumber(request.getNumber());
+		addEmployee.setAge(request.getAge());
+		addEmployee.setDepartmentID(request.getDepartmentID());
+		addEmployee.setGender(request.getGender());
+		addEmployee.setName(request.getName());
+		addEmployee.setPhone(request.getPhone());
+		addEmployee.setTimeCreate(dateTimeft.format(currentDateTime).toString());
+		addEmployee.setTimeLastModified(dateTimeft.format(currentDateTime).toString());
+		return addEmployee;
+	}
+	
+}

@@ -1,0 +1,44 @@
+package com.organization.demo.controller;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.organization.demo.bean.EmployeeBean;
+
+@RestController
+//@RequestMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping("/demo")
+public class EmployeeController {
+	
+	@Autowired
+	EmployeeBean addEmployee;
+	
+	@RequestMapping("/AddEmployee/v1")
+	public EmployeeBean AddEmployee(@RequestBody EmployeeBean request){
+		
+		Date currentDateTime = new Date();
+		SimpleDateFormat dateTimeft = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss");
+		
+		EmployeeBean addEmployee = new EmployeeBean();
+		addEmployee.setAddress(request.getAddress());
+		addEmployee.setAge(request.getAge());
+		addEmployee.setDepartmentID(request.getDepartmentID());
+		addEmployee.setGender(request.getGender());
+		addEmployee.setName(request.getName());
+		addEmployee.setPhone(request.getPhone());
+		addEmployee.setTimeCreate(dateTimeft.format(currentDateTime).toString());
+		addEmployee.setTimeLastModified(dateTimeft.format(currentDateTime).toString());
+		return addEmployee;
+	}
+	
+}
