@@ -1,7 +1,6 @@
 package com.organization.demo.domain;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 
@@ -18,11 +17,9 @@ public class EmployeeDomain {
 	
 	private int departmentID;
 	private String gender;
-	private int phone;
+	private String phone;
 	private String address;
 	private int age;
-	private String timeCreate;
-	private String timeLastModified;
 	
 	public EmployeeDomain() {
 		// TODO Auto-generated constructor stub
@@ -52,11 +49,11 @@ public class EmployeeDomain {
 		this.gender = gender;
 	}
 
-	public int getPhone() {
+	public String getPhone() {
 		return phone;
 	}
 
-	public void setPhone(int phone) {
+	public void setPhone(String phone) {
 		this.phone = phone;
 	}
 
@@ -74,22 +71,6 @@ public class EmployeeDomain {
 
 	public void setAge(int age) {
 		this.age = age;
-	}
-
-	public String getTimeCreate() {
-		return timeCreate;
-	}
-
-	public void setTimeCreate(String timeCreate) {
-		this.timeCreate = timeCreate;
-	}
-
-	public String getTimeLastModified() {
-		return timeLastModified;
-	}
-
-	public void setTimeLastModified(String timeLastModified) {
-		this.timeLastModified = timeLastModified;
 	}
 
 	public int getNumber() {
