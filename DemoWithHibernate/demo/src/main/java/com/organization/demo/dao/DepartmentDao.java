@@ -1,5 +1,9 @@
 package com.organization.demo.dao;
 
-public class DepartmentDao {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.organization.demo.bean.DepartmentBean;
+
+public interface DepartmentDao  extends JpaRepository<DepartmentBean, Integer>{
 
 }
