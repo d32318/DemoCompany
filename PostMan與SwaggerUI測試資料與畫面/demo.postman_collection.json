@@ -1,0 +1,254 @@
+{
+	"info": {
+		"_postman_id": "ba7b807f-5350-4295-8e92-79745a035fe7",
+		"name": "demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "AddEmployee",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\" : \"Sally\",\n\t\"number\" : 202005009,\n\t\"departmentID\" : 10003,\n\t\"gender\" : \"Female\",\n\t\"phone\" : \"0932310635\",\n\t\"address\" : \"Taipei\",\n\t\"age\" : 50\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/demo/Employee/EmployeeAdd/v1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"demo",
+						"Employee",
+						"EmployeeAdd",
+						"v1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddDepartment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"departmentID\" : 10005,\n\t\"departmentName\" : \"通訊部\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/demo/Department/DepartmentAdd/v1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"demo",
+						"Department",
+						"DepartmentAdd",
+						"v1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetEmployee",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"departmentID\" : 10002,\n\t\"departmentName\" : \"法務部\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/demo/Employee/EmployeeReq/v1?age=25",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"demo",
+						"Employee",
+						"EmployeeReq",
+						"v1"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Gary",
+							"disabled": true
+						},
+						{
+							"key": "number",
+							"value": "202005008",
+							"disabled": true
+						},
+						{
+							"key": "age",
+							"value": "25"
+						},
+						{
+							"key": "departmentName",
+							"value": "人資部",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DelEmployee",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"number\" : 0\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/demo/Employee/EmployeeDel/v1/?number=0",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"demo",
+						"Employee",
+						"EmployeeDel",
+						"v1",
+						""
+					],
+					"query": [
+						{
+							"key": "number",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DelDepartment",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/demo/Department/DepartmentDel/v1/?departmentID=0",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"demo",
+						"Department",
+						"DepartmentDel",
+						"v1",
+						""
+					],
+					"query": [
+						{
+							"key": "departmentID",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ModEmployee",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\" : \"Polly\",\n\t\"number\" : 202005003,\n\t\"departmentID\" : 10002,\n\t\"gender\" : \"Female\",\n\t\"phone\" : \"0922310273\",\n\t\"address\" : \"Taipei\",\n\t\"age\" : 25\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/demo/Employee/EmployeeMod/v1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"demo",
+						"Employee",
+						"EmployeeMod",
+						"v1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ModDepartment",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"departmentID\" : 10003,\n\t\"departmentName\" : \"財金部\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/demo/Department/DepartmentMod/v1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"demo",
+						"Department",
+						"DepartmentMod",
+						"v1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

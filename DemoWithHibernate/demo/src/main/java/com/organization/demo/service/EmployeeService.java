@@ -1,5 +1,7 @@
 package com.organization.demo.service;
 
+import java.util.HashMap;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,8 +15,8 @@ public class EmployeeService {
 	@Autowired
 	EmployeeDaoImpl employeeDaoImpl;
 	
-	public String EmployeePut(EmployeeBean employeePut) {
-		return employeeDaoImpl.EmployeePutDaoImpl(employeePut);
+	public String EmployeePut(EmployeeBean employeeAdd) {
+		return employeeDaoImpl.EmployeePutDaoImpl(employeeAdd);
 	}
 
 	public void EmployeeDel(int number) {
@@ -23,6 +25,10 @@ public class EmployeeService {
 
 	public String EmployeeMod(EmployeeBean employeeMod) {
 		return employeeDaoImpl.EmployeeModDaoImpl(employeeMod);
+	}
+
+	public Object employeeReq(HashMap<String, String> employeeReq) {
+		return employeeDaoImpl.EmployeeReqDaoImpl(employeeReq);
 	}
 
 }
