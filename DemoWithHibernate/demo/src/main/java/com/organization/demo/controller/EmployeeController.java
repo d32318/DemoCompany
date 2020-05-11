@@ -57,7 +57,9 @@ public class EmployeeController {
 	public Object ReqEmployee(@RequestParam(value = "name", required = false) String name, 
 							  @RequestParam(value = "number", required = false) String number, 
 							  @RequestParam(value = "age", required = false) String age, 
-							  @RequestParam(value = "departmentName", required = false) String departmentName){
+							  @RequestParam(value = "departmentName", required = false) String departmentName, 
+							  @RequestParam(value = "StartPage", required = true) String StartPage
+							  ){
 //		Object queryData = EmployeeBean 
 //		return employeeService.employeeReq(employeeReq);
 		HashMap<String, String> employeeReq = new HashMap<String,String>();
@@ -69,6 +71,7 @@ public class EmployeeController {
 			employeeReq.put("age", age);
 		}
 		employeeReq.put("departmentName", departmentName);
+		employeeReq.put("StartPage", StartPage);
 		return employeeService.employeeReq(employeeReq);
 	}
 }

@@ -131,8 +131,14 @@ public class EmployeeDaoImpl{
         }
 		try {
 			tx = session.beginTransaction();
-				@SuppressWarnings("rawtypes")
-				List query = session.createQuery(str).list();
+			int startpage = 0;
+			if(Integer.parseInt(employeeReq.get("StartPage")) <= 1) {
+				startpage = 0;
+			}else {
+				startpage = Integer.parseInt(employeeReq.get("StartPage"))*10 - 10;
+			}
+			@SuppressWarnings("rawtypes")
+			List query = session.createQuery(str).setFirstResult(startpage).setMaxResults(10).list();
 			
 			results = query;
 			tx.commit();
