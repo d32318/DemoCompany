@@ -1,0 +1,24 @@
+Read Me：
+使用spring boot開發的兩個Restful API專案範例。
+包含增、刪、改、查員工資料與部門資料共七支API。
+兩個專案分別使用JDBCTemplate組合sql語法的方式呼叫h2 db。
+和hibernate內使用annotation的Entity bean對應的方式呼叫h2 db。
+並提供h2 db的sql與使用PostMan測試API的畫面與專案。
+
+
+
+
+資料夾說明：
+
+"Demo"：
+使用JDBCTemplate組合sql語法的方式。
+
+"DemoWithHibernate"：
+hibernate使用annotation的Entity bean對應的方式呼叫。
+
+"PostMan與SwaggerUI測試資料與畫面"：
+附上PostMan的測試專案與截圖。
+附上使用SwaggerUI查看RestAPI的畫面截圖。
+
+"db"：
+h2db的sql。
