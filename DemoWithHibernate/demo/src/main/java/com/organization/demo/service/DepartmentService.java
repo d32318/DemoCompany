@@ -16,8 +16,9 @@ public class DepartmentService {
 		return departmentDaoImpl.DepartmentAddDaoImpl(departmentAdd);
 	}
 
-	public void DepartmentDel(int departmentID) {
-		departmentDaoImpl.DepartmentDelDaoImpl(departmentID);
+	public boolean DepartmentDel(int departmentID) {
+		return departmentDaoImpl.DepartmentDelDaoImpl(departmentID);
+		
 	}
 
 	public Object DepartmentMod(DepartmentBean departmentMod) {

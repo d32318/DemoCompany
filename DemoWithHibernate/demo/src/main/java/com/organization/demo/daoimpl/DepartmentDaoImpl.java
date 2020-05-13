@@ -12,9 +12,9 @@ public class DepartmentDaoImpl {
 
 	public Object DepartmentAddDaoImpl(DepartmentBean departmentAdd) {
 
+		
 		// 開啟Session，相當於開啟JDBC的Connection
         Session session = HibernateUtil.getSessionFactory().openSession();
-        // Transaction表示一組會話操作
         Transaction tx= null;
 		
 		try {
@@ -30,11 +30,10 @@ public class DepartmentDaoImpl {
 		return "{\"Result\":\"Success\"}";
 	}
 
-	public void DepartmentDelDaoImpl(int departmentID) {
+	public boolean DepartmentDelDaoImpl(int departmentID) {
 
 		// 開啟Session，相當於開啟JDBC的Connection
         Session session = HibernateUtil.getSessionFactory().openSession();
-        // Transaction表示一組會話操作
         Transaction tx= null;
 		
 		try {
@@ -45,18 +44,17 @@ public class DepartmentDaoImpl {
 			session.delete(dep);
 			tx.commit();
 			session.close(); 
-//			return "{\"Result\":\"Success\"}";
 		} catch (Exception e) {
 			e.printStackTrace();
 			tx.rollback();
 			throw new RuntimeException(e);
 		}
+		return true;
 	}
 
 	public Object DepartmentModDaoImpl(DepartmentBean departmentMod) {
 		// 開啟Session，相當於開啟JDBC的Connection
         Session session = HibernateUtil.getSessionFactory().openSession();
-        // Transaction表示一組會話操作
         Transaction tx= null;
 		
 		try {

@@ -4,14 +4,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import org.hibernate.query.Query;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.provider.HibernateUtils;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.organization.demo.bean.EmployeeBean;
@@ -20,11 +15,10 @@ import com.organization.demo.utils.HibernateUtil;
 @Repository
 public class EmployeeDaoImpl{
 	
-	public String EmployeePutDaoImpl(EmployeeBean employeeAdd) {
+	public String EmployeeAddDaoImpl(EmployeeBean employeeAdd) {
 
 		// 開啟Session，相當於開啟JDBC的Connection
         Session session = HibernateUtil.getSessionFactory().openSession();
-        // Transaction表示一組會話操作
         Transaction tx= null;
 		
 		//設定創建時間
@@ -48,11 +42,10 @@ public class EmployeeDaoImpl{
 		return "{\"Result\":\"Success\"}";
 	}
 
-	public void EmployeeDelDaoImpl(int number) {
+	public boolean EmployeeDelDaoImpl(int number) {
 		
 		// 開啟Session，相當於開啟JDBC的Connection
         Session session = HibernateUtil.getSessionFactory().openSession();
-        // Transaction表示一組會話操作
         Transaction tx= null;
 		
 		try {
@@ -63,18 +56,17 @@ public class EmployeeDaoImpl{
 			session.delete(emp);
 			tx.commit();
 			session.close(); 
-//			return "{\"Result\":\"Success\"}";
 		} catch (Exception e) {
 			e.printStackTrace();
 			tx.rollback();
 			throw new RuntimeException(e);
 		}
+		return true;
 	}
 
 	public String EmployeeModDaoImpl(EmployeeBean employeeMod) {
 		// 開啟Session，相當於開啟JDBC的Connection
         Session session = HibernateUtil.getSessionFactory().openSession();
-        // Transaction表示一組會話操作
         Transaction tx= null;
 		
         
@@ -113,7 +105,6 @@ public class EmployeeDaoImpl{
 		Object results = null;
 		// 開啟Session，相當於開啟JDBC的Connection
         Session session = HibernateUtil.getSessionFactory().openSession();
-        // Transaction表示一組會話操作
         Transaction tx= null;
         String str = "from DepartmentBean as t0, EmployeeBean as t1 "
 				+ "where t0.departmentID=t1.departmentID";

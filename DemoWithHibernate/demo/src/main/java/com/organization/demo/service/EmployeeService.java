@@ -15,19 +15,19 @@ public class EmployeeService {
 	@Autowired
 	EmployeeDaoImpl employeeDaoImpl;
 	
-	public String EmployeePut(EmployeeBean employeeAdd) {
-		return employeeDaoImpl.EmployeePutDaoImpl(employeeAdd);
+	public String EmployeeAdd(EmployeeBean employeeAdd) {
+		return employeeDaoImpl.EmployeeAddDaoImpl(employeeAdd);
 	}
 
-	public void EmployeeDel(int number) {
-		employeeDaoImpl.EmployeeDelDaoImpl(number);
+	public boolean EmployeeDel(int number) {
+		return employeeDaoImpl.EmployeeDelDaoImpl(number);
 	}
 
 	public String EmployeeMod(EmployeeBean employeeMod) {
 		return employeeDaoImpl.EmployeeModDaoImpl(employeeMod);
 	}
 
-	public Object employeeReq(HashMap<String, String> employeeReq) {
+	public Object EmployeeReq(HashMap<String, String> employeeReq) {
 		return employeeDaoImpl.EmployeeReqDaoImpl(employeeReq);
 	}
 

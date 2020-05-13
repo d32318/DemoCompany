@@ -28,14 +28,6 @@ public class EmployeeBean {
 	public EmployeeBean() {
     }
 	
-	public EmployeeBean(String name, int number, int age, String departmentName) {
-		super();
-		DepartmentBean department= new DepartmentBean();
-		this.name = name;
-		this.number = number;
-		this.age = age;
-	}
-	
 	public String getName() {
 		return name;
 	}
