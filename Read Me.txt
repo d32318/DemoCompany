@@ -3,6 +3,7 @@ Read Me：
 包含增、刪、改、查員工資料與部門資料共七支API。
 兩個專案分別使用JDBCTemplate組合sql語法的方式呼叫h2 db。
 和hibernate內使用annotation的Entity bean對應的方式呼叫h2 db。
+hibernate的專案包含使用Mockito做單元測試的部分。
 並提供h2 db的sql與使用PostMan測試API的畫面與專案。
 
 
